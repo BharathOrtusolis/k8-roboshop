@@ -3,10 +3,10 @@ apiVersion: v1
 kind: ConfigMap
 
 metadata:
-  name: catelogue
+  name: catalogue
   namespace: roboshop
   labels:
-    purpose: catelogue
+    purpose: catalogue
     env: dev
 
 data:
@@ -17,10 +17,10 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: catelogue
+  name: catalogue
   namespace: roboshop
   labels:
-    component: catelogue
+    component: catalogue
     project: roboshop
     tier: app
 
@@ -29,37 +29,37 @@ spec:
 
   selector:
     matchLabels:
-      component: catelogue
+      component: catalogue
       project: roboshop
       tier: app
 
   template:
     metadata:
       labels:
-        component: catelogue
+        component: catalogue
         project: roboshop
         tier: app
 
     spec:
       containers:
-        - name: catelogue
-          image: bharathkumarots/catelogue:v1
+        - name: catalogue
+          image: bharathkumarots/catalogue:v1
 
 ---
 apiVersion: v1
 kind: Service
 
 metadata:
-  name: catelogue
+  name: catalogue
   namespace: roboshop
   labels:
-    component: catelogue
+    component: catalogue
     project: roboshop
     tier: app
 
 spec:
   selector:
-    component: catelogue
+    component: catalogue
     project: roboshop
     tier: app
 
