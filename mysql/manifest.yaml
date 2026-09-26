@@ -48,6 +48,9 @@ spec:
       containers:
         - name: mysql
           image: bharathkumarots/mysql:v1
+          envFrom:
+           -SecretRef:
+             name: mysql
 
 ---
 
