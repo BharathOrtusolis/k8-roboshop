@@ -45,13 +45,12 @@ spec:
         tier: database
 
     spec:
-      containers:
-        - name: mysql
-          image: bharathkumarots/mysql:v1
-          envFrom:
-           -SecretRef:
-             name: mysql
-
+     containers:
+  - name: mysql
+    image: bharathkumarots/mysql:v1
+    envFrom:
+      - secretRef:
+          name: mysql
 ---
 
 apiVersion: v1
