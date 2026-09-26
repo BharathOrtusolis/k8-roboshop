@@ -1,4 +1,4 @@
-```yaml
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -62,4 +62,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-```
+
